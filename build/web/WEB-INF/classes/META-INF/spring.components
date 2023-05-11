@@ -1,0 +1,4 @@
+#
+#Tue May 09 18:26:20 EST 2023
+Controller.RegistroIMCController=org.springframework.stereotype.Component
+Controller.UsuarioController=org.springframework.stereotype.Component

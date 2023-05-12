@@ -10,16 +10,16 @@ import java.math.BigDecimal;
  *
  * @author patoe
  */
-public class RegistroIMC 
+public class RegistroIMC    //Clase para manipular los registros de IMC
 {
-    int id;
-    String userName;
-    BigDecimal masa;
-    BigDecimal altura;
-    BigDecimal imc;
-    String fecha;
+    int id;     //id del registro
+    String userName;    //Usuario ala uqe pertenece
+    BigDecimal masa;    //Masa registrada dentro del registro
+    BigDecimal altura;  //Altura del usuario
+    BigDecimal imc;     //IMC calculado
+    String fecha;       //Fecha del registrp
 
-    public RegistroIMC()
+    public RegistroIMC()    //Constructores
     {
         super();
     }
@@ -41,6 +41,7 @@ public class RegistroIMC
         this.fecha = fecha;
     }
 
+    //Getters y Setters
     public int getId() {
         return id;
     }

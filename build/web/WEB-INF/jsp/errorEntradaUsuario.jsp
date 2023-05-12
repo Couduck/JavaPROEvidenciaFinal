@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<!-- JSP donde se muestran los mensajes de error cada vez que ocurre alguno al ingresar información -->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

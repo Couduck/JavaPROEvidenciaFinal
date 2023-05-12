@@ -16,27 +16,27 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author patoe
  */
-public class UsuarioDBActions 
+public class UsuarioDBActions       //Operaciones CRUD necesarias dentro de la tabla de Usuarios
 {
-    Conexion connect = new Conexion();
-    JdbcTemplate template = new JdbcTemplate(connect.Conectar());
-    ModelAndView MAV = new ModelAndView();
+    Conexion connect = new Conexion();      //Objeto Conexión para establecer el enlace con la BD
+    JdbcTemplate template = new JdbcTemplate(connect.Conectar());   //Template de Spring MVC para llevar a cabo operaciones CRUD en una base de tipo MySQL
+    ModelAndView MAV = new ModelAndView();  //Vista que se regresará en caso de ser necesario
     
-    public List<Usuario> UsuarioPorUserName(String username)
+    public List<Usuario> UsuarioPorUserName(String username)    //Busca y regresa un usuario que coincida con el Username proporcionado
     {
         String instruccion = "select * from usuarios where nomUsuarioWeb = ?";
         List datos = convertirListasObjetos(this.template.queryForList(instruccion, username));
         return datos;
     }
     
-    public ModelAndView AgregarNuevoUsuario(Usuario u)
+    public ModelAndView AgregarNuevoUsuario(Usuario u)      //Agrega a la tabla de usuarios un nuevo registro
     {
         String instruccion = "insert into usuarios(nombreReal, apellidoPat, apellidoMat, nomUsuarioWeb, password, sexo, altura, edad)values(?,?,?,?,?,?,?,?)";
         this.template.update(instruccion, u.getNombreReal(), u.getApellidoPat(), u.getApellidoMat(), u.getNomUsuarioWeb(), u.getPassword(), u.getSexo(), u.getAltura(), u.getEdad());
         return new ModelAndView("redirect:/index.htm"); 
     }
     
-    public List<Usuario> convertirListasObjetos(List<Map<String,Object>> lista)
+    public List<Usuario> convertirListasObjetos(List<Map<String,Object>> lista)     //Transforma el resultado de this.template.queryForList (Un objeto de tipo List<Map<String,Object>>) a un objeto de tipo List<Usuario>
     {
         List<Usuario> devolver = new ArrayList<Usuario>();
         

@@ -10,18 +10,19 @@ import java.math.BigDecimal;
  *
  * @author patoe
  */
-public class Usuario 
+public class Usuario        //Clase para manipular los Usuarios
 {
-    int id;
-    String nombreReal;
-    String apellidoPat;
-    String apellidoMat;
-    String nomUsuarioWeb;
-    String password;
-    String sexo;
-    BigDecimal altura;
-    int edad;
+    int id;     //Id del usuario
+    String nombreReal;  //Nombre real del usuario
+    String apellidoPat; //Apellido paterno del usuario
+    String apellidoMat; //Apellido materno
+    String nomUsuarioWeb;   //Nombre con el que usuario se dará de alta en el sitio
+    String password;    //Contraseña del nombre de usuario
+    String sexo;        //Sexo biológico del usuario
+    BigDecimal altura;  //Altura del usario
+    int edad;   //Edad del usuario
     
+    //Constructores
     public Usuario()
     {
         super();
@@ -51,6 +52,7 @@ public class Usuario
         this.edad = edad;
     }
 
+    //Getters y Setters
     public int getId() {
         return id;
     }
